@@ -4,7 +4,14 @@ class GraphQLService {
   GraphQLClient _client;
 
   GraphQLService() {
-    HttpLink link = HttpLink(uri: 'https://rickandmortyapi.com/graphql/');
+    // HttpLink link = HttpLink(uri: 'https://rickandmortyapi.com/graphql/');
+     HttpLink link = HttpLink(uri: 'https://dev-monuments.nfndev.com/v1/graphql',headers: {
+      // 'Authenticator':'Bearer '+ token,
+      // 'Authorization':'Bearer '+ token,
+      'Content-Type': 'application/json',
+      'x-hasura-admin-secret':'Remember001',
+      // 'Accept': 'application/json',
+    });
 
     _client = GraphQLClient(link: link, cache: InMemoryCache());
   }

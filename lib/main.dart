@@ -11,17 +11,25 @@ void main() {
   runApp(MyApp());
 }
 
+// String query = r'''
+//   query {
+//     characters(page: 1) {
+//       results {
+//         id
+//         name
+//         status
+//       }
+//     }
+//   }
+// ''';
+
 String query = r'''
-  query {
-    characters(page: 1) {
-      results {
-        id
-        name
-        status
-      }
-    }
+query MyQuery {
+  users {
+    auth0_id
+    username
   }
-''';
+}''';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
